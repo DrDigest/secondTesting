@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Committee Communication System</title>
+  <style>
+    /* Basic styling for the layout */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .committee-form {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 10px;
+      width: 400px;
+      text-align: center;
+    }
+
+    .committee-form h2 {
+      margin-bottom: 10px;
+    }
+
+    .committee-form input[type="text"],
+    .committee-form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .committee-form button {
+      padding: 8px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .committee-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Committee Communication System</h1>
+
+  <div class="container">
+    <div class="committee-form" id="committeeForm">
+      <h2>Send Message to Committee Chairman</h2>
+      <input type="text" id="committeeName" placeholder="Committee Name"><br>
+      <input type="text" id="chairmanName" placeholder="Chairman's Name"><br>
+      <textarea id="message" rows="5" placeholder="Your Message"></textarea><br>
+      <button onclick="sendMessage()">Send Message</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const committeeName = document.getElementById('committeeName').value;
+      const chairmanName = document.getElementById('chairmanName').value;
+      const message = document.getElementById('message').value;
+
+      // Perform action to send message (can be via fetch to the server)
+      console.log(`Message sent to ${chairmanName} of ${committeeName}: ${message}`);
+      
+      // Optional: Show success message or perform further actions
+      alert('Message sent successfully!');
+    }
+  </script>
+</body>
+</html>
